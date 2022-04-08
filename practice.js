@@ -339,8 +339,7 @@
 // function naiveSearch(long,short) {
 //     var count = 0;
 //     for(let i = 0; i<long.length;i++){
-//             for(let j = 0; j <short.length; j++){
-//                 console.log(short[j],long[i+j]);    
+//             for(let j = 0; j <short.length; j++){   
 //             if (short[j] !== long[i+j]){
 //           break;
 //           }
@@ -365,23 +364,46 @@
 // **********************SORTING
 
 // function bubbleSort (arr) {
-//     for(i = arr.length; i> 0; i--){
-//         for(j=0;j<i-1;j++){
+//     var noSwap;
+
+//     for(i = arr.length ;i>0;i--){
+//       noSwap = true
+//       for(j=0;j<i-1;j++){
 //         console.log(arr,arr[j],arr[j+1])
 //         if(arr[j] > arr[j+1]){
-//             var temp = arr[j];
-//             arr[j] = arr[j+1]
-//             arr[j+1] = temp;
-//             }
+//         let temp = arr[j];
+//         arr[j] = arr[j+1];
+//         arr[j+1] = temp;
+//         noSwap = false;
 //         }
+//       }
+//       if(noSwap) break;
 //     }
 //     return arr
-
-// }
-
-// const here = bubbleSort([4,1,8,34,12,91,2,6]);
+//   }
+  
+//   console.log(bubbleSort([4,2,1,5,3]))
 
 // console.log(here);
+
+
+// Selection Sort
+
+// function selection(arr) {
+//     for(i=0;i<arr.length;i++){
+//     let lowest = i;
+//       for(j=i+1;j<arr.length;j++){
+//         if(arr[lowest] > arr[j]){
+//         lowest = j;
+//         }
+//       }
+//       var temp =  arr[i];
+//       arr[i] = arr[lowest];
+//       arr[lowest] = temp
+//     }
+//     return arr 
+//   }
+//   console.log(selection([3,2,6,1]));
 
 
 // function insertionSort (arr) {
