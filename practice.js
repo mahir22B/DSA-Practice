@@ -458,11 +458,351 @@
 // mergeSort([10,3,5,1]);
 
 
-function reverse(string) {
-    for(let i=0; i<string.length;i++){
-        console.log(string)
-    }
+// *******************QUICK SORT AND RADIX SORT REMAINING***********************//
 
-}
 
-console.log(reverse('mahir'))
+// *******************Linked List******************************
+
+
+// class Node {
+    //  constructor(val){
+        //  this.val = val;
+//  this.next = null;
+//     }
+// }
+
+// a = new Node('A')
+// b = new Node('B')
+// c = new Node('C')
+// d = new Node('D')
+
+// a.next = b;
+// b.next = c;
+// c.next = d;
+
+// Recursive Linked List
+
+// const printList = (head) => {
+//     if(head === null) return;
+//     console.log(head.val)
+//     printList(head.next)
+// }
+
+// Iterative Linked List
+
+// const printList = (head) => {
+//     let current = head;
+
+//     while(current !== null){
+//         console.log(current.val)
+//         current = current.next;
+//     }
+// }
+
+// **************** Pushing new node 
+
+// class Node {
+//     constructor(val) {
+//       this.val = val;
+//       this.next = null;
+//     }
+//   }
+  
+//   class SinglyLinked {
+//     constructor() {
+//       this.head = null;
+//       this.tail = null;
+//       this.length = 0;
+//     }
+//     push(val) {
+//       var newNode = new Node(val);
+//       if (!this.head) {
+//         this.head = newNode;
+//         this.tail = this.head;
+//       } else {
+//         this.tail.next = newNode;
+//         this.tail = newNode;
+//       }
+//       this.length++;
+//       return this;
+//     }
+//   }
+  
+//   let list = new SinglyLinked();
+//   list.push('Hi');
+//   list.push('Mahir');
+//   list.push(22);
+  
+//   console.log(list);
+
+
+
+// ********************* Traverse
+
+// traverse(){
+//     let current = this.head;
+//     while(current){
+//        console.log(current.val);
+//        current = current.next
+//     }
+    
+// }
+
+  
+
+// ********************* Pop (remove a node from the end) a node
+
+// pop(){
+    // if(!this.head) return null;
+    // let current = this.head;
+    // let newTail = current;
+
+    // while(current.next){
+    //     newTail = current;
+    //     current = current.next;
+    // }   
+    //     this.tail = newTail;
+    //     this.tail.next = null;
+    //     this.length--;
+    // if(this.length === 0) {
+    //     this.head = null;
+    //     this.tail = null;
+    // }
+    // return current
+// }
+
+
+// ********************* Shift (remove a node from the beginning) a node
+
+// shift(){
+//     if(!this.head) return undefined
+
+//     let current = this.head;
+//     this.head = current.next;
+//     this.length--
+
+    // if(this.length === 0) {
+    //     this.head = null;
+    //     this.tail = null;
+    // }
+    
+//     return current;
+// }
+
+
+// ******************** UnShift (adding a node at the beginning) a node
+    
+    // unShift(val) {
+    //     let newNode = new Node(val);
+
+    //     if(!this.head){
+    //         this.head = newNode;
+    //         this.tail = this.head;
+    //     } 
+        //     else {
+        //     newNode.next = this.head;
+        //     this.head = newNode;
+        // }
+        //     this.length++
+        //     return this;
+    // }
+
+
+// *********************** Get (value of a particular node) a node
+
+        // get(index) {
+        //     if(index < 0 || index.length >= this.length) return null;
+
+        //     let counter = 0;
+        //     let current = this.head;
+
+        //     while(counter !== index) {
+        //         current = current.next;
+        //         counter++
+        //     }
+
+        //     return current;
+        // }
+
+
+
+
+// *********************** Set (change value of a particular node) a node
+
+    // set(index, value){
+    //   let foundNode = this.get(index);
+
+    //   if(foundNode) {
+    //       foundNode.val = val;
+    //       return true;
+    //   }
+    //   return false;
+    // }
+
+
+// ************************* Insert (Insert a value at a particular position) a node
+
+    // insert(index,val){
+    //     if(index < 0 || index > this.length) return false;
+    //     if(index === this.length) {
+    //         this.push(val);
+    //         return true;
+    //     } 
+    //     if(index === 0)  {
+    //         this.unShift(val);
+    //         return true;
+    //     }
+
+    //     let newNode = new Node(val);
+    //     let prev = this.getComputedStyle(index - 1);
+    //     let temp = prev.next;
+    //     prev.next = newNode;
+    //     newNode.next = temp;
+    //     this.length++
+    //     return true
+
+    // }
+
+
+
+// ************************** Remove (remove the value at a particular position) a node
+
+// remove(index){
+//     if(index < 0 || index >= this.length) return null;
+//     if(index === 0) return this.shift();
+//     if(index === this.length - 1) return this.pop();
+
+//     let prev = this.get(index - 1);
+//     let removedNode = prev.next;
+//     prev.next = removedNode.next;
+//     this.length--
+//     return removedNode;
+// }
+
+
+
+// **************************** Convert a Linked List to an Array
+
+// convert(){
+
+// let arr = [];
+// let current = this.head;
+
+// while(current){
+//     arr.push(current);
+//     current = current.next;
+// }
+// console.log(arr);
+// }
+
+
+// reverse(){
+//     let node = this.head;
+//     this.head = this.tail;
+//     this.tail = node;
+//     let node;
+//     let prev = null
+
+//     for(let i = 0; i < this.length; i++) {
+//         next = node.next;
+//         node.next = prev;
+//         prev = node;
+//         node = next;
+//     }
+//     return this;
+// }    
+
+
+
+// ********* Stacks ***********************************************
+
+// class Node {
+//     constructor(val){
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+
+// class Stack {
+//     constructor(){
+
+//     this.first = null;
+//     this.last = null;
+//     this.size = 0;
+//     }
+
+//     push(val){
+//         let newNode = new Node(val);
+//         if(!this.first){
+//             this.first = newNode;
+//             this.last = newNode;
+//         } else {
+//             let temp = this.first;
+//             this.first = newNode;
+//             this.first.next = temp;
+//         }
+            // this.size++
+            // return this.size
+//     }
+
+        // pop() {
+        //     if(!this.first) return null;
+        //     let temp = this.first
+        //     if(this.first === this.last){
+        //         this.last = null;
+        //     }
+        //     this.first = this.first.next;
+        //     this.size--
+        //     return temp.val;
+        // }
+
+
+
+// }
+
+
+
+// ********* Queues ***********************************************
+
+// class Node {
+//     constructor(val){
+//         this.val = val;
+//         this.next = null;
+//     }
+// }
+
+
+// class Queue {
+//         constructor(){
+//             this.first = null;
+//             this.last = null;
+//             this.size = 0;
+//         }
+
+//         enqueue(val){
+//             let newNode = new Node(val);
+//             if(!this.first){
+//                 this.first = newNode;
+//                 this.last = newNode;
+//             } else {
+//                 this.last.next = newNode;
+//                 this.last = newNode;
+//             }
+//                 this.size++
+//         }
+
+//         dequeue(){
+//             if(!this.first) return null;
+//             let temp = this.first;
+//             if(this.first === this.last){
+//                 this.first = null;
+//                 this.last = null;
+//             }
+//                 this.first = this.first.next;
+//                 this.size--
+//                 return temp;
+//         }
+//     }
+
+
+
